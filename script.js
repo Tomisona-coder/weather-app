@@ -72,5 +72,6 @@ function giveLocation(response) {
   let city = document.querySelector("#cityName");
   city.innerHTML = response.data.name;
 }
-let location = document.querySelector("#location");
-location.addEventListener("click", handlePosition);
+
+let button1 = document.querySelector("#location");
+button1.addEventListener("click", handlePosition);
