@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h4>
+        <div id="cityName">Ottawa</div>
+        <div id="currentDate"></div>
+        <div id="current-temp">
+          15°c
+        </div>
+        <div id="weather-description"></div>
+      </h4>
+      <div>
+        <button id="location">Current Location</button>
+      </div>
+      <form>
+        <div class="form-group">
+          <i class="fas fa-city"></i>
+          <input
+            type="text"
+            class="form-control"
+            autocomplete="off"
+            id="formGroupExampleInput"
+            placeholder="What city?..."
+          />
+        </div>
+      </form>
+      <button type="button" class="btn btn-outline-dark">Search</button>
+      <div class="row">
+        <div class="col-3 1">
+          Tomorrow,
+          <br />
+          <i class="fas fa-sun"></i>
+          <br />
+          14°c | <strong>20°c</strong>
+          <hr />
+        </div>
+        <div class="col-3 Mon">
+          Mon, Mar 13
+          <br />
+          <i class="fas fa-wind"></i>
+          <br />
+          16°c | <strong>-5°c</strong>
+          <hr />
+        </div>
+        <div class="col-3 Wed">
+          Wed, Mar 15
+          <br />
+          <i class="fas fa-bolt"></i>
+          <br />
+          15°c | <strong>-2°c</strong>
+          <hr />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-3 Tue">
+          Tue, Mar 14
+          <br />
+          <i class="fas fa-cloud-moon-rain"></i>
+          <br />
+          13°c | <strong>17°c</strong>
+          <hr />
+        </div>
+        <div class="col-3 Thur">
+          Thur, March 16
+          <br />
+          <i class="far fa-snowflake"></i>
+          <br />
+          18°c | <strong>-3°c</strong>
+          <hr />
+        </div>
+      </div>
+      <div class="card border-info mb-3" style="max-width: 8rem;">
+        <div class="card-body text-info">
+          <h5 class="card-title">
+            <em>
+              Humidity
+              <br />
+              30%
+            </em>
+          </h5>
+        </div>
+      </div>
+      <div class="card border-secondary mb-3" style="max-width: 8rem;">
+        <div class="card-body text-secondary">
+          <h5 class="card-title">
+            <em
+              >Rain
+              <br />
+              10%
+            </em>
+          </h5>
+        </div>
+      </div>
+      <div class="card border-dark mb-3" style="max-width: 8rem;">
+        <div class="card-body text-dark">
+          <h5 class="card-title">
+            <em>
+              Wind
+              <br />
+              S 7km/h
+            </em>
+          </h5>
+        </div>
+      </div>
+      <script src="index.js"></script>
+    </div>
+  </body>
+</html>
