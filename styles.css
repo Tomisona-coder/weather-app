@@ -4,7 +4,7 @@ div.container {
   max-width: 800px;
   margin-top: 100px;
   margin-left: 230px;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   border-radius: 4px;
   height: 570px;
   padding-top: 15px;
@@ -118,4 +118,18 @@ hr {
 }
 .card.border-info.mb-3:hover {
   opacity: 0.7;
+}
+.reference-links {
+  text-align: center;
+}
+.github-link,
+.netlify-link {
+  color: #17a2b8;
+  text-decoration: underline;
+}
+.github-link:hover {
+  color: rgb(116, 87, 87);
+}
+.netlify-link:hover {
+  color: rgb(116, 87, 87);
 }
