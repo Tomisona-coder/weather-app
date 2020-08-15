@@ -122,14 +122,10 @@ hr {
 .reference-links {
   text-align: center;
 }
-.github-link,
-.netlify-link {
+.github-link {
   color: #17a2b8;
   text-decoration: underline;
 }
 .github-link:hover {
-  color: rgb(116, 87, 87);
-}
-.netlify-link:hover {
   color: rgb(116, 87, 87);
 }
