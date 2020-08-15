@@ -14,8 +14,8 @@ function giveDate() {
   let minutes = present.getMinutes();
   let currentDate = document.querySelector("#currentDate");
   currentDate.innerHTML = `${day}, ${hour}:${minutes}`;
-  if (minutes <= 9) {
-    minutes = `0${minutes}`;
+  if (minutes < 10) {
+    minutes = `0${present.getMinutes()}`;
   }
 }
 giveDate();
@@ -66,11 +66,14 @@ function givePosition(position) {
 function giveLocation(response) {
   console.log(response.data.main.temp);
   console.log(response.data.name);
+  console.log(response.data.weather[0].description);
   let roundTemp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${roundTemp}°c`;
   let city = document.querySelector("#cityName");
   city.innerHTML = response.data.name;
+  let currentDes = document.querySelector("#weather-description");
+  currentDes.innerHTML = `${response.data.weather[0].description}`;
 }
 
 let button1 = document.querySelector("#location");
