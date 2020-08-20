@@ -14,9 +14,6 @@ function giveDate() {
   let minutes = present.getMinutes();
   let currentDate = document.querySelector("#currentDate");
   currentDate.innerHTML = `${day}, ${hour}:${minutes}`;
-  if (minutes < 10) {
-    minutes = `0${present.getMinutes()}`;
-  }
 }
 giveDate();
 
@@ -36,32 +33,33 @@ function showCity(event) {
     .then(giveTemp);
 }
 
-let button = document.querySelector(".btn.btn-outline-dark");
-button.addEventListener("click", showCity);
-
 function giveTemp(response) {
-  console.log(response.data.main.temp);
-  console.log(response.data.weather[0].description);
+  console.log(response.data);
   let roundTemp = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#current-temp");
   temperature.innerHTML = `${roundTemp}°c`;
   let description = document.querySelector("#weather-description");
   description.innerHTML = `${response.data.weather[0].description}`;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  let clouds = document.querySelector("#cloud");
+  clouds.innerHTML = response.data.clouds.all;
 }
+
+let button = document.querySelector(".btn.btn-outline-dark");
+button.addEventListener("click", showCity);
 
 function handlePosition(event) {
   navigator.geolocation.getCurrentPosition(givePosition);
 }
 function givePosition(position) {
-  let longitude = position.coords.longitude;
-  let latitude = position.coords.latitude;
-  let geoLocation = "https://api.openweathermap.org/data/2.5/weather?";
+  let longitude = `${position.coords.longitude}`;
+  let latitude = `${position.coords.latitude}`;
   let apiKey = "445b59e1c2b5dacc40535dc0b8ba3f74";
-  axios
-    .get(
-      `${geoLocation}lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`
-    )
-    .then(giveLocation);
+  let geoLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  axios.get(geoLocation).then(giveLocation);
 }
 function giveLocation(response) {
   console.log(response.data.main.temp);
