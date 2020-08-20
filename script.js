@@ -1,22 +1,3 @@
-function giveDate() {
-  let present = new Date();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[present.getDay()];
-  let hour = present.getHours();
-  let minutes = present.getMinutes();
-  let currentDate = document.querySelector("#currentDate");
-  currentDate.innerHTML = `${day}, ${hour}:${minutes}`;
-}
-giveDate();
-
 function showCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#formGroupExampleInput");
@@ -33,8 +14,32 @@ function showCity(event) {
     .then(giveTemp);
 }
 
+function giveDate(timestamp) {
+  let present = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[present.getDay()];
+  let hour = present.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = present.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day}, ${hour}:${minutes}`;
+}
+
 function giveTemp(response) {
-  console.log(response.data);
+  let currentDate = document.querySelector("#currentDate");
+  currentDate.innerHTML = giveDate(response.data.dt * 1000);
   let roundTemp = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#current-temp");
   temperature.innerHTML = `${roundTemp}°c`;
