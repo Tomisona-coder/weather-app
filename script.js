@@ -67,9 +67,8 @@ function givePosition(position) {
   axios.get(geoLocation).then(giveLocation);
 }
 function giveLocation(response) {
-  console.log(response.data.main.temp);
-  console.log(response.data.name);
-  console.log(response.data.weather[0].description);
+  let currentDate = document.querySelector("#currentDate");
+  currentDate.innerHTML = giveDate(response.data.dt * 1000);
   let roundTemp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${roundTemp}°c`;
@@ -77,6 +76,12 @@ function giveLocation(response) {
   city.innerHTML = response.data.name;
   let currentDes = document.querySelector("#weather-description");
   currentDes.innerHTML = `${response.data.weather[0].description}`;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  let clouds = document.querySelector("#cloud");
+  clouds.innerHTML = response.data.clouds.all;
 }
 
 let button1 = document.querySelector("#location");
