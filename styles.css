@@ -26,6 +26,13 @@ h4 {
 #current-temp {
   color: rgb(116, 89, 89);
 }
+#unit {
+  font-size: medium;
+  float: right;
+  position: relative;
+  right: 63px;
+  top: 2px;
+}
 #weather-description {
   font-family: "Pangolin", cursive;
   font-size: 15px;
