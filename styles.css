@@ -25,19 +25,28 @@ h4 {
 }
 #current-temp {
   color: rgb(116, 89, 89);
+  position: relative;
+  right: 20px;
 }
 #unit {
   font-size: medium;
   float: right;
   position: relative;
-  right: 63px;
-  top: 2px;
+  right: 61px;
+  bottom: 27px;
 }
 #weather-description {
   font-family: "Pangolin", cursive;
   font-size: 15px;
   text-transform: capitalize;
   font-weight: lighter;
+  position: relative;
+  left: 22px;
+}
+#icon {
+  position: relative;
+  right: 300px;
+  bottom: 130px;
 }
 #location {
   position: relative;

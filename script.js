@@ -42,7 +42,7 @@ function giveTemp(response) {
   currentDate.innerHTML = giveDate(response.data.dt * 1000);
   let roundTemp = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = `${roundTemp}°c`;
+  temperature.innerHTML = `${roundTemp}`;
   let description = document.querySelector("#weather-description");
   description.innerHTML = `${response.data.weather[0].description}`;
   let humidityElement = document.querySelector("#humidity");
@@ -51,6 +51,11 @@ function giveTemp(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let clouds = document.querySelector("#cloud");
   clouds.innerHTML = response.data.clouds.all;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let button = document.querySelector(".btn.btn-outline-dark");
@@ -71,7 +76,7 @@ function giveLocation(response) {
   currentDate.innerHTML = giveDate(response.data.dt * 1000);
   let roundTemp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `${roundTemp}°c`;
+  currentTemp.innerHTML = `${roundTemp}`;
   let city = document.querySelector("#cityName");
   city.innerHTML = response.data.name;
   let currentDes = document.querySelector("#weather-description");
@@ -82,6 +87,11 @@ function giveLocation(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let clouds = document.querySelector("#cloud");
   clouds.innerHTML = response.data.clouds.all;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let button1 = document.querySelector("#location");
