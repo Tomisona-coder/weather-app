@@ -35,12 +35,13 @@ h4 {
   right: 61px;
   bottom: 27px;
 }
-#celsius-link {
+.active {
   color: rgb(116, 89, 89);
   cursor: default;
 }
-#celsius-link:hover {
+.active:hover {
   text-decoration: none;
+  color: rgb(116, 89, 89);
 }
 #weather-description {
   font-family: "Pangolin", cursive;
