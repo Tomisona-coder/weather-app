@@ -2,7 +2,7 @@ div.container {
   border: 2px solid black;
   background-color: #17a2b8;
   max-width: 800px;
-  margin-top: 55px;
+  margin-top: 40px;
   margin-left: 230px;
   margin-bottom: 20px;
   border-radius: 4px;
@@ -116,11 +116,19 @@ h4 {
 .col-3.Tue,
 .col-3.Thur {
   position: relative;
+  left: 26px;
+  text-align: center;
+  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  font-size: medium;
+  bottom: 11px;
+}
+.forecast-1 {
+  position: relative;
   left: 88px;
   text-align: center;
   font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
   font-size: medium;
-  bottom: 39px;
+  bottom: 12px;
 }
 .col-3:hover {
   border: 1px dashed black;
@@ -160,6 +168,7 @@ hr {
 }
 .reference-links {
   text-align: center;
+  line-height: 0.2;
 }
 .github-link {
   color: #17a2b8;

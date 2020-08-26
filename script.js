@@ -104,6 +104,7 @@ function formatHours(timestamp) {
   }
   return `${hour}:${minutes}`;
 }
+
 function displayForecast(response) {
   console.log(response.data);
   let forecastElement = document.querySelector(".forecast");
@@ -126,14 +127,14 @@ function displayForecast(response) {
   forecastElement1.innerHTML = null;
   let forecast1 = null;
   for (let index = 3; index < 5; index++) {
-    forecast1 = response.data.list[3];
-    forecastElement1.innerHTML += `<div class="col-3 1 details">
-          ${formatHours(forecast.dt * 1000)}
+    forecast1 = response.data.list[index];
+    forecastElement1.innerHTML += `<div class="col-3 1 details second">
+          ${formatHours(forecast1.dt * 1000)}
           <img src= "http://openweathermap.org/img/wn/${
-            forecast.weather[0].icon
+            forecast1.weather[0].icon
           }@2x.png" class="picture"/>
-          ${Math.round(forecast.main.temp_min)}° | <strong>${Math.round(
-      forecast.main.temp_max
+          ${Math.round(forecast1.main.temp_min)}° | <strong>${Math.round(
+      forecast1.main.temp_max
     )}°</strong>
           <hr />
         </div>`;
