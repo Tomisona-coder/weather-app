@@ -12,6 +12,10 @@ function showCity(event) {
   axios
     .get(`${apiUrl}${cityInput.value}&units=metric&appid=${apiKey}`)
     .then(giveTemp);
+  let apiForecast = "https://api.openweathermap.org/data/2.5/forecast?q=";
+  axios
+    .get(`${apiForecast}${cityInput.value}&units=metric&appid=${apiKey}`)
+    .then(displayForecast);
 }
 
 function giveDate(timestamp) {
@@ -26,15 +30,7 @@ function giveDate(timestamp) {
     "Saturday",
   ];
   let day = days[present.getDay()];
-  let hour = present.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minutes = present.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${day}, ${hour}:${minutes}`;
+  return `${day}, ${formatHours(timestamp)}`;
 }
 
 function giveTemp(response) {
@@ -94,6 +90,37 @@ function giveLocation(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   celsiusTemperature = response.data.main.temp;
+}
+
+function formatHours(timestamp) {
+  let present = new Date(timestamp);
+  let hour = present.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = present.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hour}:${minutes}`;
+}
+function displayForecast(response) {
+  let forecastElement = document.querySelector(".forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  for (let index = 0; index < 3; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col-3 1 details">
+          ${formatHours(forecast.dt * 1000)}
+          <img src= "http://openweathermap.org/img/wn/${
+            forecast.weather[0].icon
+          }@2x.png" class="picture"/>
+          ${Math.round(forecast.main.temp_min)}° | <strong>${Math.round(
+      forecast.main.temp_max
+    )}°</strong>
+          <hr />
+        </div>`;
+  }
 }
 
 let button1 = document.querySelector("#location");

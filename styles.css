@@ -98,6 +98,20 @@ h4 {
   font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
   font-size: medium;
   bottom: 45px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.details {
+  line-height: 0.5;
+}
+.picture {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  line-height: 0.2;
 }
 .col-3.Tue,
 .col-3.Thur {
@@ -112,6 +126,7 @@ h4 {
   border: 1px dashed black;
   border-radius: 5px;
   background-color: rgb(116, 87, 87);
+  padding-top: 13px;
 }
 .fas {
   font-size: larger;
