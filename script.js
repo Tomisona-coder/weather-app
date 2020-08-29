@@ -3,7 +3,7 @@ function showCity(event) {
   let cityInput = document.querySelector("#formGroupExampleInput");
   let nameCity = document.querySelector("#cityName");
   if (cityInput.value) {
-    nameCity.innerHTML = `${cityInput.value}`;
+    nameCity.innerHTML = `${cityInput.value.toLowerCase()}`;
   } else {
     alert("Please type a city🌆");
   }

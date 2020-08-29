@@ -23,6 +23,9 @@ h4 {
   left: 40px;
   top: 0px;
 }
+#cityName {
+  text-transform: capitalize;
+}
 #current-temp {
   color: rgb(116, 89, 89);
   position: relative;
@@ -34,6 +37,7 @@ h4 {
   position: relative;
   right: 61px;
   bottom: 27px;
+  color: rgb(240, 88, 88);
 }
 .active {
   color: rgb(116, 89, 89);
