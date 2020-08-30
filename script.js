@@ -67,6 +67,10 @@ function givePosition(position) {
   let apiKey = "445b59e1c2b5dacc40535dc0b8ba3f74";
   let geoLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   axios.get(geoLocation).then(giveLocation);
+  let apiForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}`;
+  axios
+    .get(`${apiForecast}&units=metric&appid=${apiKey}`)
+    .then(displayForecast);
 }
 function giveLocation(response) {
   let currentDate = document.querySelector("#currentDate");
