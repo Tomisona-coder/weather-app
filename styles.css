@@ -27,7 +27,7 @@ h4 {
   text-transform: capitalize;
 }
 #current-temp {
-  color: rgb(116, 89, 89);
+  color: rgb(126, 95, 95);
   position: relative;
   right: 20px;
 }
@@ -39,16 +39,15 @@ h4 {
   bottom: 27px;
 }
 #unit a {
-  color: rgb(116, 89, 89);
-  color: rgb(240, 88, 88);
+  color: rgb(204, 69, 69);
 }
 #unit a.active {
-  color: rgb(116, 89, 89);
+  color: rgb(126, 95, 95);
   cursor: default;
 }
 .active:hover {
   text-decoration: none;
-  color: rgb(116, 89, 89);
+  color: rgb(126, 95, 95);
 }
 #weather-description {
   font-family: "Pangolin", cursive;
@@ -70,7 +69,7 @@ h4 {
   margin: 0px;
   padding: 10px 15px;
   background-color: rgb(155, 117, 117);
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 30px;
   transition: all 200ms ease-in-out;
   font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
@@ -138,7 +137,7 @@ h4 {
   bottom: 12px;
 }
 .col-3:hover {
-  border: 1px dashed black;
+  border: 2px dashed black;
   border-radius: 5px;
   background-color: rgb(155, 117, 117);
   padding-top: 13px;
@@ -163,6 +162,9 @@ hr {
   font-size: 14px;
   text-align: center;
   font-family: "docs-EB Garamond";
+}
+.emoji {
+  font-style: normal;
 }
 .card.border-dark.mb-3:hover {
   opacity: 0.7;
